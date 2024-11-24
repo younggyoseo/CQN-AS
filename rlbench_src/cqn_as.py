@@ -339,7 +339,7 @@ class C2FCriticNetwork(nn.Module):
         value_x = torch.cat([value_h, prev_actions, action_sequence_id, level_id], -1)
         value_feats = self.value_net(value_x)
         # Process through GRU
-        value_feats = value_feats.view(B, L * T, -1)
+        value_feats = value_feats.view(B * L, T, -1)
         value_feats = self.value_gru(value_feats)[0]
         values = self.value_head(value_feats).view(B, L, *self.value_output_shape)
 
@@ -348,7 +348,7 @@ class C2FCriticNetwork(nn.Module):
         adv_x = torch.cat([adv_h, prev_actions, action_sequence_id, level_id], -1)
         adv_feats = self.adv_net(adv_x)
         # Process through GRU
-        adv_feats = adv_feats.view(B, L * T, -1)
+        adv_feats = adv_feats.view(B * L, T, -1)
         adv_feats = self.adv_gru(adv_feats)[0]
         advs = self.adv_head(adv_feats).view(B, L, *self.adv_output_shape)
 

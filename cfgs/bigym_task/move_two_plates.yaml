@@ -1,0 +1,9 @@
+defaults:
+  - default
+  - _self_
+
+task_name: move_two_plates
+enable_all_floating_dof: false
+episode_length: 5500
+num_train_frames: 101000
+demo_down_sample_rate: 10

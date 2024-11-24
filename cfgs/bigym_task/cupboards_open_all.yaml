@@ -1,0 +1,8 @@
+defaults:
+  - default
+  - _self_
+
+task_name: cupboards_open_all
+enable_all_floating_dof: true
+episode_length: 22500
+demo_down_sample_rate: 25

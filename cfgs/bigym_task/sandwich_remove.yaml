@@ -1,0 +1,9 @@
+defaults:
+  - default
+  - _self_
+
+task_name: sandwich_remove
+enable_all_floating_dof: true
+episode_length: 13500
+num_train_frames: 101000
+demo_down_sample_rate: 25

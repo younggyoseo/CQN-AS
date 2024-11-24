@@ -1,0 +1,9 @@
+defaults:
+  - default
+  - _self_
+
+task_name: drawers_close_all
+enable_all_floating_dof: true
+episode_length: 5000
+demo_down_sample_rate: 25
+num_train_frames: 26000

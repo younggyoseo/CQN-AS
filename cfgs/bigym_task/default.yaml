@@ -1,0 +1,8 @@
+action_mode: absolute
+camera_shape: [84,84]
+camera_keys: [head,right_wrist,left_wrist]
+state_keys: [proprioception,proprioception_grippers,proprioception_floating_base]
+render_mode: rgb_array
+num_demos: -1
+num_train_frames: 101000
+normalize_low_dim_obs: true

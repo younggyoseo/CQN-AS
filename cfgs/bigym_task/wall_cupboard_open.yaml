@@ -1,0 +1,9 @@
+defaults:
+  - default
+  - _self_
+
+task_name: wall_cupboard_open
+enable_all_floating_dof: true
+episode_length: 6000
+num_train_frames: 51000
+demo_down_sample_rate: 20

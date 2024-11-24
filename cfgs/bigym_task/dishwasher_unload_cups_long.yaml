@@ -1,0 +1,8 @@
+defaults:
+  - default
+  - _self_
+
+task_name: dishwasher_unload_cups_long
+enable_all_floating_dof: true
+episode_length: 18000
+demo_down_sample_rate: 25

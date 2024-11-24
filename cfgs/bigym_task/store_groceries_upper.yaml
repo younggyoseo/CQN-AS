@@ -1,0 +1,8 @@
+defaults:
+  - default
+  - _self_
+
+task_name: store_groceries_upper
+enable_all_floating_dof: true
+episode_length: 19000
+demo_down_sample_rate: 25

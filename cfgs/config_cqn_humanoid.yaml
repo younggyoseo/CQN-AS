@@ -1,0 +1,73 @@
+defaults:
+  - _self_
+  - override hydra/launcher: submitit_local
+
+# env settings
+task_name: h1hand-walk-v0
+# task settings
+action_repeat: 1
+discount: 0.99
+# train settings
+num_seed_frames: 10000
+num_train_frames: 10000000
+# eval
+eval_every_frames: 10000
+num_eval_episodes: 10
+# snapshot
+save_snapshot: false
+# replay buffer
+replay_buffer_size: 10000000
+replay_buffer_num_workers: 4
+nstep: 3
+batch_size: 128
+# misc
+seed: 1
+device: cuda
+save_video: true
+save_train_video: false
+use_tb: true
+use_wandb: false
+# experiment
+experiment: exp
+# agent
+lr: 5e-5
+weight_decay: 0.1
+num_update_steps: 1
+use_compile: false
+use_cuda_graph: false
+
+agent:
+  _target_: humanoid_src.cqn.CQNAgent
+  low_dim_obs_shape: ??? # to be specified later
+  action_shape: ??? # to be specified later
+  device: ${device}
+  lr: ${lr}
+  weight_decay: ${weight_decay}
+  critic_target_tau: 1.0
+  critic_target_interval: 1000
+  update_every_steps: 1
+  stddev_schedule: 0.01
+  num_expl_steps: 10000
+  hidden_dim: 512
+  levels: 3
+  bins: 5
+
+wandb:
+  project: cqn
+  entity: user
+  name: experiment
+
+hydra:
+  run:
+    dir: ./exp_local/cqn_humanoid/${task_name}_${now:%Y%m%d%H%M%S}
+  sweep:
+    dir: ./exp/${now:%Y.%m.%d}/${now:%H%M}_${agent_cfg.experiment}
+    subdir: ${hydra.job.num}
+  launcher:
+    timeout_min: 4300
+    cpus_per_task: 10
+    gpus_per_node: 1
+    tasks_per_node: 1
+    mem_gb: 160
+    nodes: 1
+    submitit_folder: ./exp/${now:%Y.%m.%d}/${now:%H%M%S}_${agent_cfg.experiment}/.slurm

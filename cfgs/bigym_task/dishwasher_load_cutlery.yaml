@@ -1,0 +1,8 @@
+defaults:
+  - default
+  - _self_
+
+task_name: dishwasher_load_cutlery
+enable_all_floating_dof: true
+episode_length: 7000
+demo_down_sample_rate: 10

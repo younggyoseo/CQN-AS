@@ -1,0 +1,9 @@
+defaults:
+  - default
+  - _self_
+
+task_name: reach_target_single
+enable_all_floating_dof: false
+episode_length: 1000
+num_train_frames: 101000
+demo_down_sample_rate: 10

@@ -1,0 +1,8 @@
+defaults:
+  - default
+  - _self_
+
+task_name: sandwich_toast
+enable_all_floating_dof: true
+episode_length: 16500
+demo_down_sample_rate: 25

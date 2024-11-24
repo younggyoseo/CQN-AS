@@ -1,0 +1,4 @@
+*.pyc
+exp_local
+bigym
+humanoid_bench

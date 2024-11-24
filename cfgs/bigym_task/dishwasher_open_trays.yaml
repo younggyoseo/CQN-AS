@@ -1,0 +1,9 @@
+defaults:
+  - default
+  - _self_
+
+task_name: dishwasher_open_trays
+enable_all_floating_dof: true
+episode_length: 9500
+demo_down_sample_rate: 25
+num_train_frames: 26000

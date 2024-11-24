@@ -1,0 +1,9 @@
+defaults:
+  - default
+  - _self_
+
+task_name: saucepan_to_hob
+enable_all_floating_dof: true
+episode_length: 11000
+num_train_frames: 101000
+demo_down_sample_rate: 25

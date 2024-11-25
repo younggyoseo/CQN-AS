@@ -32,7 +32,7 @@ We also provide implementation of **DrQ-v2+**, a variant of DrQ-v2 that is highl
 ## Experimental Setups
 Our codebase supports running CQN and CQN-AS on various domains popular for researchers. We plan to support more domains and any PR or suggestion to support more domains (including yours) is welcome!
 
-| Domain | State-based | Pixel-based | Action Seqeunce | Demo-driven | Stable |
+| Domain | State-based | Pixel-based | Action Sequence | Demo-driven | Stable |
 |-|-|-|-|-|-|
 | [BiGym](https://github.com/chernyadev/bigym) | :x: | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark:|
 | [RLBench](https://github.com/stepjam/RLBench) | :x: | :white_check_mark:| :white_check_mark: | :white_check_mark: |:white_check_mark:|

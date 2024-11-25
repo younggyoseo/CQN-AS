@@ -37,7 +37,7 @@ Our codebase supports running CQN and CQN-AS on various domains popular for rese
 | [BiGym](https://github.com/chernyadev/bigym) | :x: | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark:|
 | [RLBench](https://github.com/stepjam/RLBench) | :x: | :white_check_mark:| :white_check_mark: | :white_check_mark: |:white_check_mark:|
 | [HumanoidBench](https://github.com/carlosferrazza/humanoid-bench) | :white_check_mark: | :x: | :white_check_mark: | :x: |:white_check_mark:|
-| [DMC](https://github.com/google-deepmind/dm_control) | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: |:warning:|
+| [DMC](https://github.com/google-deepmind/dm_control) | :white_check_mark: | :white_check_mark: | :x: | :x: |:warning:|
 
 
 ## Installation

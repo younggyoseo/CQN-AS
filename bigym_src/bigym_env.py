@@ -92,9 +92,9 @@ class ExtendedTimeStepWrapper:
             low_dim_obs=time_step.low_dim_obs,
             step_type=time_step.step_type,
             action=action,
-            reward=time_step.reward or 0.0,
-            discount=time_step.discount or 1.0,
-            demo=time_step.demo or 0.0,
+            reward=time_step.reward,
+            discount=time_step.discount,
+            demo=time_step.demo,
         )
 
     def low_dim_observation_spec(self):

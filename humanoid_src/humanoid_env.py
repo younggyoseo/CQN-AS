@@ -192,8 +192,8 @@ class ExtendedTimeStepWrapper(dm_env.Environment):
             observation=time_step.observation,
             step_type=time_step.step_type,
             action=action,
-            reward=time_step.reward or 0.0,
-            discount=time_step.discount or 1.0,
+            reward=time_step.reward,
+            discount=time_step.discount,
         )
 
     def observation_spec(self):

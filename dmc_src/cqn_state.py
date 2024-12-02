@@ -239,7 +239,6 @@ class CQNAgent:
             self.critic.parameters(),
             lr=lr,
             weight_decay=weight_decay,
-            capturable=use_cuda_graph and not use_compile,
         )
 
         self.train()

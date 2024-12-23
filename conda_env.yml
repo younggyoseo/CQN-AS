@@ -1,4 +1,4 @@
-name: cqn_as2
+name: cqn_as
 channels:
   - defaults
 dependencies:

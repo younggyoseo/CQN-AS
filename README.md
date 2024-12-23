@@ -75,7 +75,6 @@ CUDA_VISIBLE_DEVICES=0 MUJOCO_EGL_DEVICE_ID=0 python train_cqn_as_bigym.py bigym
 
 # Run DrQ-v2+
 CUDA_VISIBLE_DEVICES=0 MUJOCO_EGL_DEVICE_ID=0 python train_drqv2plus_bigym.py bigym_task=move_plate seed=1
-
 ```
 
 ## Instructions for RLBench experiments

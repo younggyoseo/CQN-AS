@@ -15,8 +15,7 @@ The key idea is to apply multiple levels of discretization to continuous action 
 
 **CQN-AS** extends **CQN** by training a critic network that outputs *Q-values over a series of actions*, allowing for learning useful value functions from noisy training data such as human-collected demonstrations.
 
-We also provide implementation of **DrQ-v2+**, a variant of DrQ-v2 that is highly optimized for demo-driven RL setup, along with the implementation of **DrQ-v2-AS+** that incorporates action sequence into **DrQ-v2+**.
-
+We also provide implementation of **DrQ-v2+**, a variant of DrQ-v2 that is highly optimized for demo-driven RL setup.
 ![gif1](media/cqn_gif1.gif)
 ![gif2](media/cqn_gif2.gif)
 
@@ -77,11 +76,7 @@ CUDA_VISIBLE_DEVICES=0 MUJOCO_EGL_DEVICE_ID=0 python train_cqn_as_bigym.py bigym
 # Run DrQ-v2+
 CUDA_VISIBLE_DEVICES=0 MUJOCO_EGL_DEVICE_ID=0 python train_drqv2plus_bigym.py bigym_task=move_plate seed=1
 
-# Run DrQ-v2-AS+ (Ours)
-CUDA_VISIBLE_DEVICES=0 MUJOCO_EGL_DEVICE_ID=0 python train_drqv2plus_as_bigym.py bigym_task=move_plate seed=1
 ```
-
-**Warning**: DrQ-v2-AS+ is not extensively tested
 
 ## Instructions for RLBench experiments
 
@@ -117,12 +112,7 @@ CUDA_VISIBLE_DEVICES=0 DISPLAY=:0.0 python train_cqn_as_rlbench.py rlbench_task=
 
 # Run DrQ-v2+
 CUDA_VISIBLE_DEVICES=0 DISPLAY=:0.0 python train_drqv2plus_rlbench.py rlbench_task=take_lid_off_saucepan num_demos=100 dataset_root=/your/own/directory
-
-# Run DrQ-v2-AS+ (Ours)
-CUDA_VISIBLE_DEVICES=0 DISPLAY=:0.0 python train_drqv2plus_as_rlbench.py rlbench_task=take_lid_off_saucepan num_demos=100 dataset_root=/your/own/directory
 ```
-
-**Warning**: DrQ-v2-AS+ is not extensively tested
 
 ## Instructions for HumanoidBench experiments
 

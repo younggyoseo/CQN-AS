@@ -7,6 +7,10 @@ import os
 os.environ["MKL_SERVICE_FORCE_INTEL"] = "1"
 os.environ["MUJOCO_GL"] = "egl"
 
+if 'SLURM_STEP_GPUS' in os.environ:
+    os.environ['EGL_DEVICE_ID'] = os.environ['SLURM_STEP_GPUS']
+    os.environ['MUJOCO_EGL_DEVICE_ID'] = os.environ['SLURM_STEP_GPUS']
+
 from pathlib import Path
 
 import hydra

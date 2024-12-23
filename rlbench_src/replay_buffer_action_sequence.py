@@ -187,8 +187,10 @@ class ReplayBuffer(IterableDataset):
         self._samples_since_last_fetch += 1
         episode = self._sample_episode()
         # add +1 for the first dummy transition
-        idx = np.random.randint(0, episode_len(episode) - self._nstep + 1) + 1
-        next_idx = idx + self._nstep - 1
+        idx = np.random.randint(0, episode_len(episode)) + 1
+        max_nstep = episode_len(episode) - idx  # Maximum valid nstep for the given idx
+        adjusted_nstep = min(self._nstep, max_nstep)  # Adjust nstep if idx is near the end
+        next_idx = idx + adjusted_nstep - 1
 
         obs_idxs = list(
             map(
@@ -228,7 +230,7 @@ class ReplayBuffer(IterableDataset):
 
         reward = np.zeros_like(episode["reward"][idx])
         discount = np.ones_like(episode["discount"][idx])
-        for i in range(self._nstep):
+        for i in range(adjusted_nstep):
             step_reward = episode["reward"][idx + i]
             reward += discount * step_reward
             _discount = episode["discount"][idx + i]

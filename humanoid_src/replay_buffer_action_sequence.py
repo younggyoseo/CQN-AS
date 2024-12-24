@@ -165,10 +165,10 @@ class ReplayBuffer(IterableDataset):
         episode = self._sample_episode()
         # add +1 for the first dummy transition
         idx = np.random.randint(0, episode_len(episode)) + 1
-        max_nstep = episode_len(episode) - idx  # Maximum valid nstep for the given idx
+        max_nstep = episode_len(episode) + 1 - idx  # Maximum valid nstep for the given idx
         adjusted_nstep = min(self._nstep, max_nstep)  # Adjust nstep if idx is near the end
 
-        obs = episode["observation"][idx]
+        obs = episode["observation"][idx - 1]
         next_obs = episode["observation"][idx + adjusted_nstep - 1]
 
         # Sampling action sequence

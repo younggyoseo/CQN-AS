@@ -33,7 +33,6 @@ lr: 1e-4
 feature_dim: 64
 num_update_steps: 1
 use_compile: false
-use_cuda_graph: false
 
 agent:
   _target_: dmc_src.cqn.CQNAgent

@@ -19,6 +19,17 @@ We also provide implementation of **DrQ-v2+**, a variant of DrQ-v2 that is highl
 ![gif1](media/cqn_gif1.gif)
 ![gif2](media/cqn_gif2.gif)
 
+## Updates
+- We provide logs used for drawing learning curves in `logs` directory.
+Note that this can be different from the curves in the paper (at the point of Jan 27th, 2025). We will update the paper soon.
+
+```
+import pickle
+# BENCHMARK = {humanoidbench, rlbench, bigym}
+with open("BENCHMARK_results.pkl", "wb") as f:
+    logs = pickle.load(f)
+```
+
 ## Misc
 - We adopt a domain-based code maintenance design to avoid having a too complex code design. In other words, instead of having a shared code that can be used for all domains, we maintain a separate set of files for each domain.
 - This codebase might not fully reproduce the experiments in the paper due to potential human errors in porting code. Please let us know if you encounter any discrepancy in the performance between the reported results and the results from running this code.
@@ -46,7 +57,7 @@ conda env create -f conda_env.yml
 conda activate cqn
 ```
 
-For faster experiments, install the nightly version of PyTorch, and set `use_compile` and `use_cuda_graph` to True.
+For faster experiments, install the nightly version of PyTorch, and set `use_compile` to True.
 ```
 pip3 install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu124
 ```

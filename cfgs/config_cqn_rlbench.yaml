@@ -35,7 +35,6 @@ lr: 5e-5
 weight_decay: 0.1
 feature_dim: 64
 num_update_steps: 1
-use_cuda_graph: false
 use_compile: false
 # environment
 arm_max_velocity: 2.0

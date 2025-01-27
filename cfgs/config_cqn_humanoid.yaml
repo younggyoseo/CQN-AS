@@ -34,7 +34,6 @@ lr: 5e-5
 weight_decay: 0.1
 num_update_steps: 1
 use_compile: false
-use_cuda_graph: false
 
 agent:
   _target_: humanoid_src.cqn.CQNAgent
@@ -44,8 +43,8 @@ agent:
   lr: ${lr}
   weight_decay: ${weight_decay}
   critic_target_tau: 1.0
-  critic_target_interval: 1000
-  update_every_steps: 1
+  critic_target_interval: 100
+  update_every_steps: 2
   stddev_schedule: 0.01
   num_expl_steps: 10000
   hidden_dim: 512

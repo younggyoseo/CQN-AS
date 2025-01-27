@@ -13,7 +13,6 @@ import hydra
 import numpy as np
 import torch
 from dm_env import specs
-from tensordict.nn import CudaGraphModule
 
 
 import dmc_src.dmc_env as dmc_env
@@ -164,9 +163,6 @@ class Workspace:
         else:
             update_fn = self.agent.update
             act_fn = self.agent.act
-
-        if self.cfg.use_cuda_graph:
-            update_fn = CudaGraphModule(update_fn, in_keys=[], out_keys=[])
 
         self.replay_storage.add(time_step)
         self.train_video_recorder.init(time_step.observation)

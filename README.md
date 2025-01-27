@@ -26,7 +26,7 @@ Note that this can be different from the curves in the paper (at the point of Ja
 ```
 import pickle
 # BENCHMARK = {humanoidbench, rlbench, bigym}
-with open("BENCHMARK_results.pkl", "wb") as f:
+with open("BENCHMARK_results.pkl", "rb") as f:
     logs = pickle.load(f)
 ```
 
